@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LabyrinthGame
 {
@@ -9,6 +10,21 @@ namespace LabyrinthGame
 
         public Player(string name) : base(name)
         {
+        }
+
+        public void PrintInventory()
+        {
+            if (Items.Count < 1)
+            {
+                Console.WriteLine("Ваш инвентарь пуст.");
+                return;
+            }
+
+            Console.WriteLine("В вашем инвентаре есть следующие предметы:");
+            foreach (Item item in Items)
+            {
+                Console.WriteLine($"[{item.Name}]");
+            }
         }
     }
 }
